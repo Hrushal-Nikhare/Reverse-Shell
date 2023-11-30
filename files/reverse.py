@@ -63,6 +63,6 @@ def main():
     except KeyboardInterrupt:
         s.close()
 
-# while True:
-    # main()
-main()
+while True:
+    main()
+# main()

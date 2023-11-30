@@ -1,7 +1,11 @@
 import os
 import getpass
 import socket
+
+os.system('pip install requests')
+
 import requests
+
 
 file_host = "http://127.0.0.1:5000"
 
