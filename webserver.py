@@ -19,7 +19,7 @@ def serve_file3():
 def store_data(Username, IP):
     with open(f'ips/{Username}', 'w') as f:
         f.write(f'{IP}')
-    return 1
+    return "Connection Successful"
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")

