@@ -1,6 +1,8 @@
 import socket
 import os
 
+PRETTY_UI = True
+
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -35,10 +37,31 @@ if __name__ == "__main__":
     file_dict = index_files(ips)
     # print(file_dict)
 
-    for item , value in file_dict.items():
-        print(f'{item} : {value}')
+    if PRETTY_UI:
+        import inquirer
+        # array of file names with content
+        file_options = []
+        for item , value in file_dict.items():
+            file_options.append(f"{item} : {value}")
 
-    selected = input('Select a Computer: ')
+        # print(file_options)
+
+        questions = [
+            inquirer.List(
+                "computer",
+                message="What computer do you want to connect to?",
+                choices=file_options,
+            ),
+        ]
+
+        answers = inquirer.prompt(questions)
+        selected = answers["computer"].split(':')[0][:-1] # get the name of the computer and remove the space
+    else:
+        for item , value in file_dict.items():
+            print(f'{item} : {value}')
+
+        selected = input('Select a Computer: ')
+
     clear()
     print(f'You selected {selected}')
     IP = file_dict[selected]
