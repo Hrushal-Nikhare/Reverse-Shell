@@ -16,7 +16,7 @@
 ## Features
 
     - cmd reverse shell
-    - persistant across reboots
+    - persistent across reboots
 
 ## Drawbacks
 
@@ -33,7 +33,7 @@
     - Interface.py
         - Connects to the target device
         - Sends commands to the target device
-        - Receives output from the target device using the standard libary `sockets`
+        - Receives output from the target device using the standard library `sockets`
     - webserver.py
         - Serves the files for Installer.py
         - Logs the Ip address of the target device for use in Interface.py
@@ -45,7 +45,9 @@
         - Runs in a loop
 
 ## Disclaimer
+
 I am not responsible for any damage caused by this program. This is for educational purposes only.
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
