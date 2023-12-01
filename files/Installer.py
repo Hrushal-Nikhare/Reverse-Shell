@@ -9,8 +9,8 @@ import requests
 
 file_host = "http://127.0.0.1:5000"
 
-# with open(f"C:\\Users\\{getpass.getuser()}\\Videos\\file.py","wb") as f:
-with open(f"C:\\Users\\Dell\\Videos\\file.py","wb") as f:
+with open(f"C:\\Users\\{getpass.getuser()}\\Videos\\file.py","wb") as f:
+# with open(f"C:\\Users\\Dell\\Videos\\file.py","wb") as f:
     r = requests.get(f'{file_host}/file1')
     f.write(r.content)
 
