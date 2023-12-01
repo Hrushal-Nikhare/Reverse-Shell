@@ -1,4 +1,4 @@
-import socket, subprocess, threading, time ,os
+import socket, subprocess, threading, time
 
 def s2p(s, p):
     while True:
